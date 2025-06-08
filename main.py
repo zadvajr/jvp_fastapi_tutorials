@@ -18,6 +18,10 @@ async def put():
 async def list_items():
     return {"message": "list items route."}
 
-@app.get("/items/{item_id}")
-async def get_item(item_id: int):
-    return {"item_id": item_id}
+@app.get("/users/me")
+async def get_current_user():
+    return {"message": "this is the current user"}
+
+@app.get("/users/{user_id}")
+async def get_user(user_id: str):
+    return {"user_id": user_id}
